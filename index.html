@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<title>Golf Rivals</title>
+<meta name="theme-color" content="#05070f">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main id="menu" class="screen on">
+  <h1>⛳ Golf Rivals</h1>
+  <p>Minigolfe tecnológico para 2 a 16 jogadores</p>
+  <button class="big" data-go="online">🌐 Modo Online</button>
+  <button class="big alt" data-go="local">👥 Modo Local</button>
+</main>
+
+<section id="online" class="screen">
+  <h2>Modo Online</h2>
+  <input id="nome" maxlength="12" placeholder="Seu nome">
+  <button id="criar" class="big">Criar Sala</button>
+  <div class="row"><input id="cod" maxlength="4" placeholder="CÓDIGO"><button id="entrar" class="big alt">Entrar</button></div>
+  <p id="msg"></p>
+  <button class="back" data-go="menu">Voltar</button>
+</section>
+
+<section id="lobby" class="screen">
+  <h2>Sala <b id="sala"></b></h2>
+  <p>Compartilhe o código com seus amigos (até 16)</p>
+  <ul id="lista"></ul>
+  <div class="chips dif" id="difH"></div>
+  <button id="ini" class="big">Iniciar Partida</button>
+  <p id="espera"></p>
+</section>
+
+<section id="local" class="screen">
+  <h2>Modo Local</h2>
+  <p>Jogadores se revezam no mesmo aparelho</p>
+  <label>Quantidade de jogadores (2 a 16)<input id="qtd" type="number" min="2" max="16" value="2"></label>
+  <p>Dificuldade</p><div class="chips dif"></div>
+  <button id="iniL" class="big">Iniciar</button>
+  <button class="back" data-go="menu">Voltar</button>
+</section>
+
+<section id="game" class="screen">
+  <div id="hud"><span id="info"></span><span id="tempo"></span></div>
+  <canvas id="c" width="600" height="500"></canvas>
+  <ul id="placar"></ul>
+  <div id="toast"></div>
+</section>
+
+<section id="fim" class="screen">
+  <h2>🏆 Resultado Final</h2>
+  <ol id="rank"></ol>
+  <button class="big" onclick="location.reload()">Menu Principal</button>
+</section>
+
+<script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
